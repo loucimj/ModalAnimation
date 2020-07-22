@@ -60,7 +60,11 @@ final class ModalPresentationTransitioningDelegate: NSObject, UIViewControllerTr
 and in the presenting view controller: 
 
 ```swift
-
+class ViewController: UIViewController {
+    ...
+    
+    let customTransitioningDelegate = ModalPresentationTransitioningDelegate()
+    
     @objc func open() {
         let viewController = ModalViewController()
         if #available(iOS 13.0, *) {
@@ -71,4 +75,5 @@ and in the presenting view controller:
         self.navigationController?.present(viewController, animated: true, completion: nil)
     }
 
+}
 ```
