@@ -56,3 +56,19 @@ final class ModalPresentationTransitioningDelegate: NSObject, UIViewControllerTr
     
 }
 ```
+
+and in the presenting view controller: 
+
+```swift
+
+    @objc func open() {
+        let viewController = ModalViewController()
+        if #available(iOS 13.0, *) {
+            viewController.isModalInPresentation = true
+        }
+        viewController.modalPresentationStyle = .custom
+        viewController.transitioningDelegate = customTransitioningDelegate
+        self.navigationController?.present(viewController, animated: true, completion: nil)
+    }
+
+```
