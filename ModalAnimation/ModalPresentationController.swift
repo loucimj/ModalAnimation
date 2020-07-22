@@ -42,10 +42,9 @@ class ModalPresentationController: UIPresentationController {
     }
     
     override func dismissalTransitionDidEnd(_ completed: Bool) {
-        guard let dimmingView = self.dimmingView else { return }
-        if completed {
-            dimmingView.removeFromSuperview()
-        }
+        guard let dimmingView = self.dimmingView, completed else { return }
+        
+        dimmingView.removeFromSuperview()
     }
     
 }
