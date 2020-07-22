@@ -2,4 +2,4 @@
 
 An example using a custom transition delegate
 
-![animation](video/video.gif)
+<img src="video/video.gif" width="375" />
